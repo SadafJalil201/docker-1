@@ -1,0 +1,8 @@
+FROM alpine
+LABEL maintainer="sadafjalil201@gmail.com"
+RUN apk add --update nodejs nodejs-npm -y
+COPY . /src
+WORKDIR /src
+RUN npm install
+EXPOSE 8040
+ENTRYPOINT ["node", "./app.js"]
